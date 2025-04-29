@@ -14,5 +14,13 @@ class StringCalculatorTest < Minitest::Test
         assert_equal 5, StringCalculator.add("2,3")
     end
 
+    def test_multiple_comma_seperated_numbers
+        assert_equal 10, StringCalculator.add("1,2,3,4")
+    end
+
+    def test_numbers_with_newlines
+        assert_equal 6, StringCalculator.add("1\n2,3")
+    end
+
 
 end
