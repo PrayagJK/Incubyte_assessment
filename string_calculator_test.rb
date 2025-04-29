@@ -22,5 +22,12 @@ class StringCalculatorTest < Minitest::Test
         assert_equal 6, StringCalculator.add("1\n2,3")
     end
 
+    def test_custom_single_character_delimiter
+        assert_equal 3, StringCalculator.add("//;\n1;2")
+    end
 
+    def test_negative_numbers_raise_exception
+        error = assert_raises(ArgumentError) { StringCalculator.add("1,-2,3") }
+        assert_match /negative numbers not allowed: -2/, error.message 
+    end
 end
