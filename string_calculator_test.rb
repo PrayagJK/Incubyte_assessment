@@ -10,5 +10,9 @@ class StringCalculatorTest < Minitest::Test
         assert_equal 1, StringCalculator.add("1")
     end
 
+    def test_two_comma_seperated_numbers
+        assert_equal 5, StringCalculator.add("2,3")
+    end
+
 
 end

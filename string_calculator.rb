@@ -1,6 +1,7 @@
 class StringCalculator
     def self.add(numbers)
         return 0 if numbers.strip.empty?
-        numbers.to_i     
+        return numbers.to_i unless numbers.include?(",")
+        numbers.split(",").map(&:to_i).sum    
     end
 end
